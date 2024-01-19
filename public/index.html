@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>contador de porcentajes
-  </title>
+  <title>Contador de Porcentajes</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+  <div id="scores-container">
+    <!-- Los resultados de la encuesta se mostrarán aquí -->
+    <div id="results-container"></div>
+  </div>
+  <script>
+    fetch('/scores')
+      .then(response => response.json())
+      .then(scores => {
+        // Mostrar los resultados en el contenedor correspondiente
+        const resultsContainer = document.getElementById('results-container');
+        resultsContainer.innerHTML = `
+          <h2>Resultados de la Encuesta</h2>
+          <p class="score">Score Femenino: ${scores.femaleScore}</p>
+          <p class="score">Score Masculino: ${scores.maleScore}</p>
+          <p class="score">Score Diverso: ${scores.diverseScore}</p>
+        `;
+        // Aplicar la clase al contenedor de resultados
+        resultsContainer.classList.add('scores-container');
+      })
+      .catch(error => {
+        console.error('Error al obtener los resultados:', error);
+      });
+  </script>
 
-
-
-  <script src="../src/scoring.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Estilos para el contenedor de resultados */
+.scores-container {
+  background-color: red;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/* Estilos para los resultados individuales */
+.score {
+  margin-bottom: 10px;
+  color: red;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif; /* Cambia la fuente para todo el cuerpo del documento */
+}
+
+.saludo {
+  color: #3498db; /* Cambia el color del texto a azul */
+  font-size: 24px; /* Cambia el tamaño de la fuente a 24 pixels */
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-top: 50px; /* Agrega un margen superior de 50 pixels */
+}
